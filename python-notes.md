@@ -410,10 +410,23 @@ other iterable types. But it is also a sequence so we can get words by index
 ![Iteration behind the scenes](./docs/iterator_vs_iterable.py)
 
 - What functions do iterators and iterables implement?
-    - 
+    - ![Iterators vs Iterables](./images/iterators_iterables.png)
 
 - How to check if an object is an Iterator, or a subclass of Iterator?
     - If the methods `__iter__` and `__next__` are implemented in a class, then
     it becomes a virtual subclass of `Iterator`
     - The `__subclasshook__` uses this logic to check presence of these methods
     - To check for possible instance use `isinstance(x, abc.Iterator)`
+
+### CLASSES WITH __ITER__
+
+- ![Sentence with Proper Internal Type Implementation](./docs/sentence_proper.py)
+- ![Sentence with Generators](./docs/sentence_generator.py)
+    - The iterator here is a generator object, built automatically when the
+    `__iter__` method is called, because `__iter__` is a generator function
+
+- How a generator works?
+    - Any Python function that has the `yield` keyword in its body
+    - It produces a generator iterator when called
+    
+- 

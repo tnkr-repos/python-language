@@ -1,4 +1,38 @@
-""
+"""
+8 - ERRORS AND EXCEPTIONS
+- Two types of errors:
+    - Syntax errors (Parsing errors)
+    - Exceptions - Errors occuring during execution
+
+HANDLING EXCEPTIONS
+- The try clause is executed
+- If no exception occurs the except clause is skipped
+- If an exception occurs the rest of the try clause is skipped
+    - If the type of exception matches the exception named after the except
+    keyword the except clause is executed
+    - If it doesn't match then it is passed onto outer try statements; if no
+    handler is found, it is an unhandled exception and execution stops
+- A try may have more than one except clause to specify handlers for different
+exception. At most one handler will be executed
+- Handlers only handle exceptions that occur in the corresponding try clause not
+in other handlers of the same try statement
+
+DEFINING CLEANUP ACTIONS
+- 
+
+PREDEFINED CLEANUP ACTIONS
+- Some object define clean-up actions to be undertaken when the object is no
+longer needed, regardless of whether or not the operation using the object
+suceeded or failed. For eg. opening a file should not leave the file open for an
+indeterminate amount of time after this part of the code has finished executing.
+The with statement allows objects to be used in a way that ensures they are
+always cleaned up (f is always closed even if there was a problem encountered
+while processing the lines)
+"""
+with open("myfile.txt") as f:
+    for line in f:
+        print(line, end="")
+
 
 # CLASSES
 
